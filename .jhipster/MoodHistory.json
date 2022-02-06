@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20220205045253",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "mood_history",
+  "fields": [
+    {
+      "fieldName": "identifier",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "submissionDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "moodStatus",
+      "fieldType": "MoodStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "HAPPY,NORMAL,MEH,GRUMPY,STRESSED"
+    },
+    {
+      "fieldName": "moodDetails",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "350"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "MoodHistory",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

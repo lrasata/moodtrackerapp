@@ -1,54 +1,95 @@
+<!--@author lrasata-->
 <div class="row">
-  <div class="col-md-3">
-    <span class="hipster img-fluid rounded"></span>
-  </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-8 text-center">
+    <h1><span>How are you doing today ?</span></h1>
 
-  <div class="col-md-9">
-    <h1 class="display-4"><span>Welcome, Java Hipster!</span> (Mood Tracker App)</h1>
-
-    <p class="lead">This is your homepage</p>
-
-    <div [ngSwitch]="account !== null">
-      <div class="alert alert-success" *ngSwitchCase="true">
+    <span [ngSwitch]="account !== null">
+      <span class="alert alert-success" *ngSwitchCase="true">
         <span id="home-logged-message" *ngIf="account">You are logged in as user "{{ account.login }}".</span>
-      </div>
+      </span>
 
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span>If you want to </span>
-        <a class="alert-link" (click)="login()">sign in</a
-        ><span
-          >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
-          password="user").</span
-        >
-      </div>
-
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span>You don't have an account yet?</span>&nbsp;
-        <a class="alert-link" routerLink="account/register">Register a new account</a>
-      </div>
-    </div>
-
-    <p>If you have any question on JHipster:</p>
-
-    <ul>
-      <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">JHipster homepage</a></li>
-      <li>
-        <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">JHipster on Stack Overflow</a>
-      </li>
-      <li>
-        <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer"
-          >JHipster bug tracker</a
-        >
-      </li>
-      <li>
-        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">JHipster public chat room</a>
-      </li>
-      <li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">follow @jhipster on Twitter</a></li>
-    </ul>
-
-    <p>
-      <span>If you like JHipster, don't forget to give us a star on</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">GitHub</a>!
-    </p>
+      <span *ngSwitchCase="false">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button
+              type="button"
+              [ngClass]="
+                toggleButtonMap.get('HAPPY') ? selectedButton() + ' btn-outline-success' : unselectedButton() + ' btn-outline-success'
+              "
+              (click)="setMoodStatus('HAPPY')"
+            >
+              <span>Happy</span>
+            </button>
+            <button
+              type="button"
+              [ngClass]="toggleButtonMap.get('NORMAL') ? selectedButton() + ' btn-outline-info' : unselectedButton() + ' btn-outline-info'"
+              (click)="setMoodStatus('NORMAL')"
+            >
+              <span>Just normal really</span>
+            </button>
+          </div>
+        </div>
+        <div class="row margin-top-button">
+          <div class="col-md-12 text-center">
+            <button
+              type="button"
+              [ngClass]="
+                toggleButtonMap.get('MEH') ? selectedButton() + ' btn-outline-warning' : unselectedButton() + ' btn-outline-warning'
+              "
+              (click)="setMoodStatus('MEH')"
+            >
+              <span>A bit "meh"</span>
+            </button>
+            <button
+              type="button"
+              [ngClass]="
+                toggleButtonMap.get('GRUMPY') ? selectedButton() + ' btn-outline-danger' : unselectedButton() + ' btn-outline-danger'
+              "
+              (click)="setMoodStatus('GRUMPY')"
+            >
+              <span>Grumpy</span>
+            </button>
+          </div>
+        </div>
+        <div class="row margin-top-button">
+          <div class="col-md-12 text-center">
+            <button
+              type="button"
+              [ngClass]="
+                toggleButtonMap.get('STRESSED') ? selectedButton() + ' btn-outline-dark' : unselectedButton() + ' btn-outline-dark'
+              "
+              (click)="setMoodStatus('STRESSED')"
+            >
+              <span>Stressed out - not a happy camper</span>
+            </button>
+          </div>
+        </div>
+        <div class="row margin-top-button">
+          <div class="col-md-12 text-center">
+            <textarea
+              rows="4"
+              cols="50"
+              placeholder="Type your message here..."
+              [(ngModel)]="textValue"
+              [ngModelOptions]="{ standalone: true }"
+            ></textarea>
+          </div>
+        </div>
+        <div class="row margin-top-button">
+          <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-secondary btn-lg" (click)="onSubmit()" [disabled]="!isUserAllowedToSubmit()">
+              <span>Submit</span>
+            </button>
+            <jhi-alert></jhi-alert>
+            <br />
+            <span class="alert alert-warning" *ngIf="!isUserAllowedToSubmit()">
+              Sorry, you have already submitted your response for today, try again tomorrow!
+            </span>
+          </div>
+        </div>
+      </span>
+    </span>
   </div>
+  <div class="col-md-2"></div>
 </div>

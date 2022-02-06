@@ -1,5 +1,25 @@
 # moodTrackerApp
 
+MoodTrackerApp captures the mood of the individual via a web page and stores it into one of these 5 categories:
+
+- Happy
+- Just normal really
+- A bit “meh”
+- Grumpy
+- Stressed out – not a happy camper
+
+MoodTrackerApp does not require any authentication. So the user is anonymous.
+MoodTrackerApp stores information in Cookie and doesn't allow the user to submit twice in the same.
+
+## How to build and run
+
+- Make sure to install Java, Git and Node.js
+- Run the following command,
+
+```
+./mvnw
+```
+
 This application was generated using JHipster 7.6.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.6.0](https://www.jhipster.tech/documentation-archive/v7.6.0).
 
 ## Project Structure

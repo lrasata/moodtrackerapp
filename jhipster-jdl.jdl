@@ -1,0 +1,13 @@
+
+
+entity MoodHistory {
+	identifier String required,
+    submissionDate LocalDate required,
+	moodStatus MoodStatus required,
+    moodDetails String maxlength(350)
+}
+
+enum MoodStatus {
+    HAPPY, NORMAL, MEH, GRUMPY, STRESSED
+}
+
