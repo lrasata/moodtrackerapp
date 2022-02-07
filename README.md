@@ -1,6 +1,6 @@
 # moodTrackerApp
 
-![moodtrackerapp](moodtrackerapp.png)
+![moodtrackerapp](moodtrackerapp.PNG)
 
 MoodTrackerApp captures the mood of the individual via a web page and stores it into one of these 5 categories:
 
