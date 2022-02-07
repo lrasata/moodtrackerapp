@@ -79,6 +79,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     return true;
   }
+
   setMoodStatus(moodString: string): void {
     this.onToggleButton(moodString);
     switch (moodString) {

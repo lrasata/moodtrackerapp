@@ -1,21 +1,17 @@
 package com.mycompany.moodtrackerapp.web.rest.moodtracker;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.mycompany.moodtrackerapp.IntegrationTest;
 import com.mycompany.moodtrackerapp.domain.MoodHistory;
 import com.mycompany.moodtrackerapp.domain.enumeration.MoodStatus;
-import com.mycompany.moodtrackerapp.repository.MoodHistoryRepository;
 import com.mycompany.moodtrackerapp.repository.moodtracker.MtrMoodHistoryRepository;
 import com.mycompany.moodtrackerapp.web.rest.TestUtil;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
 import javax.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,6 +22,10 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
+/*
+ * @author lrasata
+ *
+ */
 @IntegrationTest
 @AutoConfigureMockMvc
 @WithMockUser

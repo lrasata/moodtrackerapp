@@ -9,6 +9,9 @@ import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
 
 import { HomeComponent } from './home.component';
+import { MtrMoodHistoryService } from 'app/entities/mood-history/service/mtr-mood-history.service';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('Home Component', () => {
   let comp: HomeComponent;
@@ -31,7 +34,7 @@ describe('Home Component', () => {
       TestBed.configureTestingModule({
         imports: [RouterTestingModule.withRoutes([])],
         declarations: [HomeComponent],
-        providers: [AccountService],
+        providers: [AccountService, MtrMoodHistoryService, CookieService, HttpClient, HttpHandler],
       })
         .overrideTemplate(HomeComponent, '')
         .compileComponents();

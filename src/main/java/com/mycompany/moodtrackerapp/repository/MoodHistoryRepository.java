@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Spring Data SQL repository for the MoodHistory entity.
+ *
+ * @author lrasata
  */
 @SuppressWarnings("unused")
 @Repository
