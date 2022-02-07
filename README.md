@@ -11,11 +11,11 @@ MoodTrackerApp captures the mood of the individual via a web page and stores it 
 - Stressed out – not a happy camper
 
 MoodTrackerApp does not require any authentication. So the user is anonymous.
-MoodTrackerApp stores information in Cookie and doesn't allow the user to submit twice in the same.
+MoodTrackerApp stores information in Cookie and doesn't allow the user to submit twice in the same day. It doesn't allow the user to submit with a date that is not the current date.
 
 ## This application was generated using JHipster 7.6.0
 
-As mentionned on Jhipster[https://www.jhipster.tech/] website, it is a development platform to quickly generate, develop, and deploy modern web application.
+As mentionned on [Jhipster](https://www.jhipster.tech/) website, it is a development platform to quickly generate, develop, and deploy modern web application.
 
 - After installing Jhipster with `npm install -g generator-jhipster`
 - Generate a fully functionnal web application with `jhipster`
@@ -27,7 +27,7 @@ As mentionned on Jhipster[https://www.jhipster.tech/] website, it is a developme
 
 ## How to build and run
 
-- Make sure to install Java and Node.js
+- Make sure to install [Java](https://adoptopenjdk.net/), [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/)
 - Run the following command,
 
 ```
