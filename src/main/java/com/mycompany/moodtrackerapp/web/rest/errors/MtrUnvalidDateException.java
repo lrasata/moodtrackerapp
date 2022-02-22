@@ -1,5 +1,8 @@
 package com.mycompany.moodtrackerapp.web.rest.errors;
 
+/**
+ * @author lrasata
+ */
 public class MtrUnvalidDateException extends BadRequestAlertException {
 
     private static final long serialVersionUID = 1L;

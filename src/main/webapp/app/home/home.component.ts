@@ -159,11 +159,4 @@ export class HomeComponent implements OnInit, OnDestroy {
   protected onSaveFinalize(): void {
     // Api for inheritance.
   }
-
-  // TODO
-
-  // quand je clique,
-  // je save dans le cookie : un identifier, je récupère la date, le mood, et le text
-
-  // + : cookie-ribbon for authorization
 }
